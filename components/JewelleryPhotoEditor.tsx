@@ -81,7 +81,7 @@ const JewelleryPhotoEditor = () => {
     }
 
     // Check if API key is configured
-    if (!process.env.REMOVE_API_KEY) {
+    if (!process.env.NEXT_PUBLIC_REMOVE_API_KEY) {
       toast.error("API key not configured. Please check your environment variables.");
       return;
     }
@@ -110,7 +110,7 @@ const JewelleryPhotoEditor = () => {
       const response = await fetch('https://api.gpt.ge/task/pic/segmentation', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${process.env.REMOVE_API_KEY}`
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REMOVE_API_KEY}`
         },
         body: formData
       });
